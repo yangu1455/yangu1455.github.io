@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>코딩네컷</title>
+  <style>
+    /* 이서윤체 폰트 적용을 위한 코드 */
+    @font-face {
+      font-family: "LeeSeoyun";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
+        format("woff");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* body태그 자체에 css 요소 부여 */
+    body {
+      font-family: "LeeSeoyun";
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      background-image: url("./background.png");
+    }
+
+    .container {
+      width: 390px;  /* 핸드폰 너비와 비슷함 */
+      background-color: #73a6ff;
+	    height: 100%;  /* container를 감싸고 있는 body태그의 높이 만큼을 차지하게 됨 */
+    }
+
+    .photos {
+      margin-top: 30px;
+    }
+
+    .photo-frame {
+      background-color: white;
+      margin: 15px 20px;
+      height: 200px;
+      background-size: cover;
+      position: relative;
+    }
+    
+    .footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .f-title {
+      color: white;
+      font-size: 25px;
+      font-weight: 900;
+    }
+
+    .f-date {
+      color: white;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    #image1 {
+      background-image: url("./img0.jpeg");
+    }
+
+    #image2 {
+      background-image: url("./img3.jpeg");
+    }
+
+    #image3 {
+      background-image: url("./img1.jpeg");
+    }
+
+    #image4 {
+      background-image: url("./img2.jpeg");
+    }
+
+    .photo-description {
+      /* 배경은 검게, 글자는 흰 색으로 */
+      color: white;
+      background-color: rgb(0, 34, 135);
+
+      /* 가로 너비는 내부 콘텐츠에 딱 맞게! */
+      width: fit-content;
+      padding: 0 20px;
+      margin-bottom: 7px;
+
+      /* 경계선 */
+      border-radius: 10px;
+
+      position: absolute;
+      bottom: 0;
+      transform: translate(-50%);
+      left: 50%;      
+    }
+
+    .video {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="photos">
+      <div id="image1" class="photo-frame">
+        <span class="photo-description" id="desc1">
+          형원이 자께요~
+        </span>
+      </div>
+      <div id="image2" class="photo-frame">
+        <span class="photo-description" id="desc2">
+          (민망)
+        </span>
+      </div>
+      <div id="image3" class="photo-frame">
+        <span class="photo-description" id="desc3">
+          검은 채냥이
+        </span>
+      </div>
+      <div id="image4" class="photo-frame">
+        <span class="photo-description" id="desc4">
+          최고의 아이돌
+        </span>
+      </div>
+      <!-- src : source, 즉 자료의 원천이 어디있는지를 의미해요! -->
+      <div class="photo-frame">
+        <iframe
+        class="video"
+        src="https://www.youtube.com/embed/NJuLpeEq3RY" 
+        frameborder="0"
+        ></iframe>
+      </div>
+      <div class="photo-frame">
+        <iframe
+        class="video"
+        src="https://www.youtube.com/embed/UZtlbCW9z5U" 
+        frameborder="0"
+        ></iframe>
+      </div>
+    </div>
+    <div class="footer">
+      <p class="f-title">웰라쥬 단독 대면 팬사인회</p>
+      <p class="f-date">2023.03.25</p>
+    </div>
+  </div>
+</body>
+</html>
