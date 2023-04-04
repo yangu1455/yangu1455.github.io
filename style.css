@@ -1,0 +1,39 @@
+/* 폰트 둘기마요 고딕 */
+@font-face {
+  font-family: 'Dovemayo_gothic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 폰트 태백 은하수어쩌구 */
+@font-face {
+  font-family: "TAEBAEKmilkyway";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/TAEBAEKmilkyway.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "TAEBAEKmilkyway";
+  font-weight: bolder;
+}
+
+.pad-basic {
+  padding: 0.3% 1%;
+}
+
+.btn {
+  background: white;
+  border: 2px pink solid;
+  border-radius: 28px;
+  color: pink;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: pink;
+  color: white;
+}
