@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Tetris!</title>
+  <script src="js/app.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+
+<body>
+  <!-- 규칙 모달 -->
+  <div class="rule-overlay">
+    <div class="modal-container">
+      <button class="rclose-btn"><span class="material-symbols-outlined">
+        close
+        </span></button>
+      <h3 class="rmodal-title">⭐️ 게임 규칙 ⭐️</h3>
+      <p>⬆️ 방향키 👉🏻 블록 회전 <br>
+        ⬅️ ➡️ 방향키 👉🏻 좌우 이동<br>
+        ⬇️ 방향키 👉🏻 블록 속도 증가<br>
+        스페이스 바 👉🏻 게임 시작 / 일시정지</p>
+    </div>
+  </div>
+  <!-- 게임 타이틀 -->
+  <header>
+    <h1 class="game-title"><span>겜알못도 쉽게 하는</span><br>tetris game</h1>
+  </header>
+  <main class="game-area">
+    <!-- 게임화면 -->
+    <div class="game">
+      <div class="grid"></div>
+    </div>
+    <!-- 점수판 + 버튼들 -->
+    <section>
+      <div class="display">
+        <h1 class="score fw-400 t-ucase">Your Score <br> <span class="score-display t-ucase fw-300">0</span></h1>
+        <div class="previous-shape">
+          <div class="previous-grid"></div>
+        </div>
+        <h2 class="lines-display fw-400 t-ucase">Lines : <span class="lines-score">0</span></h2>
+      </div>
+      <button class="button_s t-ucase" href="#">Start / Pause</button>
+      <button class='button_r t-ucase'>⭐️ 게임 규칙 ⭐️</button>
+    </section>
+  </main>
+</body>
+
+</html>

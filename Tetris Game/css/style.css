@@ -1,0 +1,277 @@
+:root {
+  font-size: 0.625em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  margin: auto;
+  max-width: 60rem;
+  color: #e1e7e6;
+  background-image: url(../images/tetback_img.jpg);
+}
+
+/* 게임 타이틀 들어있는 header */
+header {
+  text-align: center;
+  margin-top: 12rem;
+  margin-bottom: 8rem;
+}
+
+/* 게임화면에 칸 1개 */
+div {
+  height: 2rem;
+  width: 2rem;
+}
+
+/* 규칙 모달 글씨 */
+h3.rmodal-title,
+p {
+  color: black;
+}
+
+/* 규칙 모달 내용 */
+.modal-container p {
+  margin-top: 0rem;
+  margin-bottom: 3rem;
+  line-height: 25px;
+}
+
+/* 게임 타이틀 글씨 */
+h1.game-title {
+  font-weight: 600;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  letter-spacing: 1.5rem;
+}
+
+/* 게임 타이틀 안에 span */
+h1.game-title span {
+  font-weight: 300;
+  font-size: 0.6em;
+  letter-spacing: 1.5rem;
+}
+
+/* 글씨 속성들 */
+.t-ucase {
+  text-transform: uppercase;
+}
+
+.t-big {
+  font-size: 2.5em;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+/* 점수판 숫자 */
+.score-display {
+  font-size: 5rem;
+  color: rgb(133, 121, 107, 0.5);
+}
+
+/* 점수판 + 게임화면 영역 전부 */
+.game-area {
+  display: flex;
+  justify-content: center;
+}
+
+/* 점수판 */
+.display {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-top: 3rem;
+  width: 17.5rem;
+  height: 25rem;
+  background: #f0f0f0;
+  border: 2.5px solid #3188f2;
+  border-radius: 5px;
+  color: #85796b;
+}
+
+/* 점수, 해치운 줄 수 */
+.score,
+.lines-display {
+  padding-top: 1rem;
+  font-size: 1.2rem;
+}
+
+/* 게임화면 */
+.game {
+  height: 0;
+  width: 300px;
+}
+
+/* 테트리스 쌓이는 영역 */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 20rem;
+  height: 40rem;
+  background-color: rgba(255, 255, 255, 0.529);
+}
+
+/* 다음에 나올 블록 모양 보여주는 영역 */
+.previous-shape {
+  width: 10rem;
+  padding-left: 2rem;
+  margin-top: -5rem;
+}
+
+/* 다음에 나올 블록 쌓이는 공간(?) */
+.previous-grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 8rem;
+  height: 8rem;
+}
+
+/* 블록 모양 */
+.block {
+  background-image: url(../images/blue_block.png);
+}
+
+.block2 {
+  background-image: url(../images/purple_block.png);
+}
+
+.block3 {
+  background-image: url(../images/purple_block.png);
+}
+
+.block4 {
+  background-image: url(../images/green_block.png);
+}
+
+.block5 {
+  background-image: url(../images/navy_block.png);
+}
+
+/* 시작/멈춤 버튼 */
+.button_s {
+  position: relative;
+  width: 22rem;
+  height: 2.2rem;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 1px;
+  text-decoration: none;
+  line-height: 23px;
+  font-size: 10px;
+  display: block;
+  margin: 30px;
+  text-shadow: -1px -1px 0 #a84155;
+  background: #d25068;
+  border: 1px solid #d25068;
+  width: 12rem;
+  background-image: linear-gradient(to bottom, #f66c7b, #d25068);
+  border-radius: 5px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
+    0 -1px 0 rgba(255, 255, 255, 0.1) inset, 0 4px 0 #ad4257,
+    0 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+.button_s:active {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
+    0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  top: 5px;
+}
+
+.button_s:hover {
+  background: #f66c7b;
+  background-image: linear-gradient(top, #d25068, #f66c7b);
+}
+
+/* 게임 규칙 버튼 */
+.button_r {
+  position: relative;
+  width: 22rem;
+  height: 2.2rem;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 1px;
+  text-decoration: none;
+  line-height: 23px;
+  font-size: 10px;
+  display: block;
+  margin: 30px;
+  text-shadow: -1px -1px 0 #a84190;
+  background: #d250c9;
+  border: 1px solid #d250c9;
+  width: 12rem;
+  background-image: linear-gradient(to bottom, #f66cba, #d250c9);
+  border-radius: 5px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
+    0 -1px 0 rgba(255, 255, 255, 0.1) inset, 0 4px 0 #a84190,
+    0 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+.button_r:active {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
+    0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  top: 5px;
+}
+
+.button_r:hover {
+  background: #ec46c5;
+  background-image: linear-gradient(top, #d250c9, #a8419e);
+}
+
+
+/* 모달 오버레이 */
+.rule-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(45, 100, 139, 0.5);
+  display: grid;
+  place-items: center;
+  visibility: hidden;
+  z-index: -10;
+}
+/* 모달 열기 */
+.open-modal {
+  visibility: visible;
+  z-index: 10;
+}
+
+/* 모달 영역 */
+.modal-container {
+  background: rgba(255, 255, 255, 0.896);
+  border-radius: 0.5rem;
+  width: 65vw;
+  height: 20vh;
+  max-width: 620px;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+/* 모달 닫기 버튼 */
+.rclose-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  color: rgb(120, 2, 2);
+  cursor: pointer;
+}
+
+.rclose-btn:hover {
+  color: red;
+  transform: scale(1.3);
+}

@@ -1,0 +1,218 @@
+/* 폰트 - 강원교육새음체 */
+@font-face {
+  font-family: 'GangwonEduSaeeum_OTFMediumA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduSaeeum_OTFMediumA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'GangwonEduSaeeum_OTFMediumA';
+  background: white;
+  color: #000000;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+  color: #9c9c9c;
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+/* section */
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 35rem;
+  margin-top: 8rem;
+  background: white;
+  border: 2px solid #ffd1b2;
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
+/* alert */
+.alert {
+  margin-bottom: 1rem;
+  height: 1.25rem;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  font-size: 0.7rem;
+  border-radius: 0.25rem;
+  letter-spacing: 0.25rem;;
+  text-transform: capitalize;
+}
+.alert-danger {
+  color: #b62d3b;
+  background: #f8d7da;
+}
+.alert-success {
+  color: #1d7532;
+  background: #d4edda;
+}
+
+/* To Do List */
+.grocery-form h3 {
+  letter-spacing: 0.25rem;
+  text-transform: capitalize;
+  font-family: 'GangwonEduSaeeum_OTFMediumA';
+  color: black;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+/* 입력창 버튼 포함 */
+.form-control {
+  display: flex;
+  justify-content: center;
+}
+
+/* input */
+#grocery {
+  font-family: 'GangwonEduSaeeum_OTFMediumA';
+  padding: 0.25rem;
+  padding-left: 1rem;
+  background: #ededed;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-color: transparent;
+  font-size: 1.25rem;
+  flex: 1 0 auto;
+  color: black;
+}
+#grocery::placeholder {
+  font-family: 'GangwonEduSaeeum_OTFMediumA';
+  font-size: 18px;
+  word-spacing: 0.2rem;
+  color: #bababa;
+}
+
+/* 추가 버튼 */
+.submit-btn {
+  font-family: 'GangwonEduSaeeum_OTFMediumA';
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  background: #ffd1b2;
+  color: rgb(76, 76, 76);
+  border-color: transparent;
+  flex: 0 0 5rem;
+  align-items: center;
+  padding: 0.25rem;
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  cursor: pointer;
+}
+.submit-btn:hover {
+  background: #ffb07b;
+  color: white;
+}
+
+/* 항목 리스트가 나오는 영역 */
+.grocery-container {
+  margin-top: 2rem;
+  visibility: hidden;
+}
+.show-container {
+  visibility: visible;
+}
+
+/* 항목 */
+.grocery-item {
+  font-family: 'GangwonEduSaeeum_OTFMediumA';
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 1rem;
+  border-radius: 0.5rem;
+}
+.grocery-item:hover {
+  background: #fae3ce;
+}
+.grocery-item:hover .title {
+  color: rgb(124, 124, 124);
+}
+.title {
+  margin-bottom: 0;
+  color: black;
+  letter-spacing: 2px;
+}
+
+/* 수정, 삭제 버튼 */
+.edit-btn,
+.delete-btn {
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin: 0 0.15rem;
+}
+
+/* 수정 버튼 */
+.edit-btn {
+  color: #21af42;
+}
+.edit-btn:hover {
+  color: #146e29;
+}
+
+/* 삭제 버튼 */
+.delete-btn {
+  color: red;
+}
+.delete-btn:hover {
+  color: rgb(205, 0, 0);
+}
+
+/* 전체 삭제 버튼 */
+.clear-btn {
+  font-family: 'GangwonEduSaeeum_OTFMediumA';
+  text-transform: capitalize;
+  width: 10rem;
+  height: 1.5rem;
+  display: grid;
+  align-items: center;
+  background: transparent;
+  border-color: transparent;
+  color: red;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  letter-spacing: 0.25rem;
+  cursor: pointer;
+  margin-top: 1.25rem;
+}
+.clear-btn:hover {
+  color: rgb(205, 0, 0);
+}
+
+/* 반응형 */
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  h3 {
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+  body {
+    font-size: 1rem;
+  }
+}
