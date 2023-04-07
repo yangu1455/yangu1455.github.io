@@ -37,3 +37,8 @@
   background: pink;
   color: white;
 }
+
+.explain_box {
+  border: 2px pink solid;
+  border-radius: 15px;
+}
