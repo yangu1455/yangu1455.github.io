@@ -99,6 +99,34 @@
       width: 100%;
       height: 100%;
     }
+
+    @keyframes rtanee {
+        0% {
+          bottom: 0px;
+        }
+        100% {
+          bottom: 100px;
+        }
+      }
+
+    .absolute-rtan-area {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+
+      /* 아이콘 이동 애니메이션 관련 설정 */
+      animation-name: rtanee;
+      animation-duration: 2s;
+      animation-duration: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-fill-mode: forwards;
+    }
+
+    .absolute-rtan-area img {
+      width: 150px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -144,6 +172,9 @@
       <p class="f-title">웰라쥬 단독 대면 팬사인회</p>
       <p class="f-date">2023.03.25</p>
     </div>
+  </div>
+  <div class="absolute-rtan-area">
+    <img src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/free_photos/rtans.png" onclick="showModal()" />
   </div>
 </body>
 </html>
