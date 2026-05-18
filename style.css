@@ -42,3 +42,25 @@
   border: 2px pink solid;
   border-radius: 15px;
 }
+
+
+.button-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 16px;
+  margin-bottom: 40px;
+}
+
+.button-grid .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 120px;
+  padding: 14px 20px;
+
+  border-radius: 12px;
+
+  text-decoration: none;
+}
