@@ -52,8 +52,8 @@ fetch("./numbers.json")
       // LG U+
       const lgRecipients =
         group
-          .map(num => `${num}#`)
-          .join(";");
+          .map(num => `${num}%23`)
+          .join(",");
 
       const lgButton =
         document.createElement("a");
