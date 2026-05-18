@@ -26,7 +26,7 @@ fetch("./numbers.json")
       const ktRecipients =
         group
           .map(num => `*77${num}`)
-          .join(";");
+          .join(",");
 
       const ktButton =
         document.createElement("a");
@@ -40,14 +40,6 @@ fetch("./numbers.json")
         `KT 문자 ${groupNumber}`;
 
       ktContainer.appendChild(ktButton);
-
-      ktContainer.appendChild(
-        document.createElement("br")
-      );
-
-      ktContainer.appendChild(
-        document.createElement("br")
-      );
 
       // LG U+
       const lgRecipients =
@@ -67,13 +59,5 @@ fetch("./numbers.json")
         `LG 문자 ${groupNumber}`;
 
       lgContainer.appendChild(lgButton);
-
-      lgContainer.appendChild(
-        document.createElement("br")
-      );
-
-      lgContainer.appendChild(
-        document.createElement("br")
-      );
     }
   });
