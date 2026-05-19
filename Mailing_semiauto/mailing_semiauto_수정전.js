@@ -111,13 +111,11 @@ fetch("./numbers.json")
       });
 
       // ======================
-      // 듀얼번호 X 버튼 생성
+      // 비상 버튼 생성
       // ======================
 
       const normalRecipients =
-        group
-          .map(num => encodeURIComponent(num))
-          .join(",");
+        group.join(",");
 
       const normalButton =
         document.createElement("a");
@@ -125,10 +123,10 @@ fetch("./numbers.json")
       normalButton.className = "btn";
 
       normalButton.href =
-        `sms:${normalRecipients}?body=`;
+        `sms:${normalRecipients}`;
 
       normalButton.textContent =
-        `일반 문자 ${groupNumber}`;
+        `일반문자 ${groupNumber}`;
 
       normalContainer.appendChild(
         normalButton
@@ -159,7 +157,7 @@ fetch("./numbers.json")
       );
 
       // ======================
-      // LG U+ 버튼 생성
+      // LG 버튼 생성
       // ======================
 
       const lgRecipients =
