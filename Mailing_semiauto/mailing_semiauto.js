@@ -65,14 +65,27 @@ fetch("./numbers.json")
       });
 
     // ======================
-    // 버튼 생성
+    // 버튼 영역 가져오기
     // ======================
 
+    const normalContainer =
+      document.getElementById(
+        "normal-buttons"
+      );
+
     const ktContainer =
-      document.getElementById("kt-buttons");
+      document.getElementById(
+        "kt-buttons"
+      );
 
     const lgContainer =
-      document.getElementById("lg-buttons");
+      document.getElementById(
+        "lg-buttons"
+      );
+
+    // ======================
+    // 버튼 생성
+    // ======================
 
     for (
       let i = 0;
@@ -98,6 +111,28 @@ fetch("./numbers.json")
       });
 
       // ======================
+      // 비상 버튼 생성
+      // ======================
+
+      const normalRecipients =
+        group.join(",");
+
+      const normalButton =
+        document.createElement("a");
+
+      normalButton.className = "btn";
+
+      normalButton.href =
+        `sms:${normalRecipients}`;
+
+      normalButton.textContent =
+        `비상 문자 ${groupNumber}`;
+
+      normalContainer.appendChild(
+        normalButton
+      );
+
+      // ======================
       // KT 버튼 생성
       // ======================
 
@@ -117,7 +152,9 @@ fetch("./numbers.json")
       ktButton.textContent =
         `KT 문자 ${groupNumber}`;
 
-      ktContainer.appendChild(ktButton);
+      ktContainer.appendChild(
+        ktButton
+      );
 
       // ======================
       // LG 버튼 생성
@@ -139,7 +176,9 @@ fetch("./numbers.json")
       lgButton.textContent =
         `LG 문자 ${groupNumber}`;
 
-      lgContainer.appendChild(lgButton);
+      lgContainer.appendChild(
+        lgButton
+      );
     }
 
     // ======================
