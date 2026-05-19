@@ -126,7 +126,7 @@ fetch("./numbers.json")
         `sms:${normalRecipients}`;
 
       normalButton.textContent =
-        `비상 문자 ${groupNumber}`;
+        `일반문자 ${groupNumber}`;
 
       normalContainer.appendChild(
         normalButton
