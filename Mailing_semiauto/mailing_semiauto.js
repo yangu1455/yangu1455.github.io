@@ -4,11 +4,7 @@ fetch("./numbers.json")
   .then(response => response.json())
   .then(numbers => {
 
-    const ktContainer =
-      document.getElementById("kt-buttons");
-
-    const lgContainer =
-      document.getElementById("lg-buttons");
+    console.log("총 번호 수:", numbers.length);
 
     for (
       let i = 0;
@@ -22,42 +18,14 @@ fetch("./numbers.json")
       const groupNumber =
         Math.floor(i / CHUNK_SIZE) + 1;
 
-      // KT
-      const ktRecipients =
-        group
-          .map(num => `*77${num}`)
-          .join(",");
+      console.log(
+        `그룹 ${groupNumber} (${group.length}개)`
+      );
 
-      const ktButton =
-        document.createElement("a");
+      console.log(group);
 
-      ktButton.className = "btn";
-
-      ktButton.href =
-        `sms:${ktRecipients}`;
-
-      ktButton.textContent =
-        `KT 문자 ${groupNumber}`;
-
-      ktContainer.appendChild(ktButton);
-
-      // LG U+
-      const lgRecipients =
-        group
-          .map(num => `${num}%23`)
-          .join(",");
-
-      const lgButton =
-        document.createElement("a");
-
-      lgButton.className = "btn";
-
-      lgButton.href =
-        `sms:${lgRecipients}`;
-
-      lgButton.textContent =
-        `LG 문자 ${groupNumber}`;
-
-      lgContainer.appendChild(lgButton);
+      console.log(
+        "------------------------"
+      );
     }
   });
