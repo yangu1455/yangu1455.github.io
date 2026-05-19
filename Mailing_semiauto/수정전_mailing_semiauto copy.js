@@ -6,48 +6,6 @@ fetch("./numbers.json")
 
     console.log("총 번호 수:", numbers.length);
 
-    // ======================
-    // 전체 번호 검증
-    // ======================
-
-    console.log("\n===== 전체 번호 검증 시작 =====");
-
-    numbers.forEach((num, index) => {
-
-      const onlyNumber =
-        /^\d+$/.test(num);
-
-      const validLength =
-        num.length >= 8;
-
-      if (!onlyNumber || !validLength) {
-
-        console.log(
-          `⚠️ 이상 번호 발견 (index ${index})`
-        );
-
-        console.log(
-          `값: "${num}"`
-        );
-
-        console.log(
-          `숫자만 포함 여부: ${onlyNumber}`
-        );
-
-        console.log(
-          `길이: ${num.length}`
-        );
-
-        console.log(
-          "------------------------"
-        );
-      }
-    });
-
-    console.log(
-      "===== 전체 번호 검증 종료 =====\n"
-    );
-
     const ktContainer =
       document.getElementById("kt-buttons");
 
