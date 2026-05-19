@@ -1,28 +1,70 @@
+const CHUNK_SIZE = 19;
+
 fetch("./numbers.json")
   .then(response => response.json())
   .then(numbers => {
 
-    console.log("총 개수:", numbers.length);
+    console.log("총 번호 수:", numbers.length);
 
-    const uniqueNumbers =
-      [...new Set(numbers)];
+    for (
+      let i = 0;
+      i < numbers.length;
+      i += CHUNK_SIZE
+    ) {
 
-    console.log(
-      "중복 제거 후 개수:",
-      uniqueNumbers.length
-    );
+      const group =
+        numbers.slice(i, i + CHUNK_SIZE);
 
-    const duplicates =
-      numbers.filter(
-        (item, index) =>
-          numbers.indexOf(item) !== index
+      const groupNumber =
+        Math.floor(i / CHUNK_SIZE) + 1;
+
+      console.log(
+        `\n===== 그룹 ${groupNumber} (${group.length}개) =====`
       );
 
-    console.log(
-      "중복 번호 목록:"
-    );
+      group.forEach((num, idx) => {
 
-    console.log(
-      [...new Set(duplicates)]
-    );
+        const prev =
+          idx > 0
+            ? group[idx - 1]
+            : null;
+
+        const next =
+          idx < group.length - 1
+            ? group[idx + 1]
+            : null;
+
+        const prevDuplicate =
+          prev === num;
+
+        const nextDuplicate =
+          next === num;
+
+        console.log(
+          `${idx + 1}. ${num}`
+        );
+
+        if (
+          prevDuplicate ||
+          nextDuplicate
+        ) {
+
+          console.log(
+            "⚠️ 연속 중복 감지"
+          );
+
+          console.log(
+            `이전: ${prev}`
+          );
+
+          console.log(
+            `현재: ${num}`
+          );
+
+          console.log(
+            `다음: ${next}`
+          );
+        }
+      });
+    }
   });
