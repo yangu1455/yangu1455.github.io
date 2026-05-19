@@ -7,20 +7,10 @@ fetch("./numbers.json")
     console.log("총 번호 수:", numbers.length);
 
     // ======================
-    // 통계 변수
+    // 전체 번호 검증
     // ======================
 
-    let invalidNumbers = [];
-
-    let sequentialDuplicates = [];
-
-    let allDuplicates = [];
-
-    // ======================
-    // 이상 번호 검사
-    // ======================
-
-    console.log("\n===== 이상 번호 검사 =====");
+    console.log("\n===== 전체 번호 검증 시작 =====");
 
     numbers.forEach((num, index) => {
 
@@ -31,11 +21,6 @@ fetch("./numbers.json")
         num.length >= 8;
 
       if (!onlyNumber || !validLength) {
-
-        invalidNumbers.push({
-          index,
-          value: num
-        });
 
         console.log(
           `⚠️ 이상 번호 발견 (index ${index})`
@@ -59,52 +44,9 @@ fetch("./numbers.json")
       }
     });
 
-    // ======================
-    // 전체 중복 검사
-    // ======================
-
-    console.log("\n===== 전체 중복 검사 =====");
-
-    const duplicateMap = {};
-
-    numbers.forEach((num, index) => {
-
-      if (!duplicateMap[num]) {
-
-        duplicateMap[num] = [];
-
-      }
-
-      duplicateMap[num].push(index);
-    });
-
-    Object.entries(duplicateMap)
-      .forEach(([num, indexes]) => {
-
-        if (indexes.length > 1) {
-
-          allDuplicates.push({
-            number: num,
-            indexes
-          });
-
-          console.log(
-            `⚠️ 중복 번호: ${num}`
-          );
-
-          console.log(
-            `등장 위치: ${indexes.join(", ")}`
-          );
-
-          console.log(
-            "------------------------"
-          );
-        }
-      });
-
-    // ======================
-    // 버튼 생성 + 그룹 검사
-    // ======================
+    console.log(
+      "===== 전체 번호 검증 종료 =====\n"
+    );
 
     const ktContainer =
       document.getElementById("kt-buttons");
@@ -155,11 +97,6 @@ fetch("./numbers.json")
           nextDuplicate
         ) {
 
-          sequentialDuplicates.push({
-            group: groupNumber,
-            number: num
-          });
-
           console.log(
             "⚠️ 연속 중복 감지"
           );
@@ -187,6 +124,12 @@ fetch("./numbers.json")
           .map(num => `*77${num}`)
           .join(",");
 
+      console.log(
+        `KT recipients 개수: ${
+          ktRecipients.split(",").length
+        }`
+      );
+
       const ktButton =
         document.createElement("a");
 
@@ -209,6 +152,12 @@ fetch("./numbers.json")
           .map(num => `${num}%23`)
           .join(",");
 
+      console.log(
+        `LG recipients 개수: ${
+          lgRecipients.split(",").length
+        }`
+      );
+
       const lgButton =
         document.createElement("a");
 
@@ -222,30 +171,4 @@ fetch("./numbers.json")
 
       lgContainer.appendChild(lgButton);
     }
-
-    // ======================
-    // 최종 종합 결과
-    // ======================
-
-    console.log("\n========================");
-    console.log("최종 검사 결과");
-    console.log("========================");
-
-    console.log(
-      `총 번호 수: ${numbers.length}`
-    );
-
-    console.log(
-      `이상 번호 수: ${invalidNumbers.length}`
-    );
-
-    console.log(
-      `전체 중복 번호 수: ${allDuplicates.length}`
-    );
-
-    console.log(
-      `연속 중복 감지 수: ${sequentialDuplicates.length}`
-    );
-
-    console.log("========================");
   });
