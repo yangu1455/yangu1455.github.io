@@ -6,6 +6,12 @@ fetch("./numbers.json")
 
     console.log("총 번호 수:", numbers.length);
 
+    const ktContainer =
+      document.getElementById("kt-buttons");
+
+    const lgContainer =
+      document.getElementById("lg-buttons");
+
     for (
       let i = 0;
       i < numbers.length;
@@ -66,5 +72,61 @@ fetch("./numbers.json")
           );
         }
       });
+
+      // ======================
+      // KT 버튼 생성
+      // ======================
+
+      const ktRecipients =
+        group
+          .map(num => `*77${num}`)
+          .join(",");
+
+      console.log(
+        `KT recipients 개수: ${
+          ktRecipients.split(",").length
+        }`
+      );
+
+      const ktButton =
+        document.createElement("a");
+
+      ktButton.className = "btn";
+
+      ktButton.href =
+        `sms:${ktRecipients}`;
+
+      ktButton.textContent =
+        `KT 문자 ${groupNumber}`;
+
+      ktContainer.appendChild(ktButton);
+
+      // ======================
+      // LG 버튼 생성
+      // ======================
+
+      const lgRecipients =
+        group
+          .map(num => `${num}%23`)
+          .join(",");
+
+      console.log(
+        `LG recipients 개수: ${
+          lgRecipients.split(",").length
+        }`
+      );
+
+      const lgButton =
+        document.createElement("a");
+
+      lgButton.className = "btn";
+
+      lgButton.href =
+        `sms:${lgRecipients}`;
+
+      lgButton.textContent =
+        `LG 문자 ${groupNumber}`;
+
+      lgContainer.appendChild(lgButton);
     }
   });
