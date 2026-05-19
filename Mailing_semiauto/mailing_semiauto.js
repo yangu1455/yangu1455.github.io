@@ -1,31 +1,28 @@
-const CHUNK_SIZE = 19;
-
 fetch("./numbers.json")
   .then(response => response.json())
   .then(numbers => {
 
-    console.log("총 번호 수:", numbers.length);
+    console.log("총 개수:", numbers.length);
 
-    for (
-      let i = 0;
-      i < numbers.length;
-      i += CHUNK_SIZE
-    ) {
+    const uniqueNumbers =
+      [...new Set(numbers)];
 
-      const group =
-        numbers.slice(i, i + CHUNK_SIZE);
+    console.log(
+      "중복 제거 후 개수:",
+      uniqueNumbers.length
+    );
 
-      const groupNumber =
-        Math.floor(i / CHUNK_SIZE) + 1;
-
-      console.log(
-        `그룹 ${groupNumber} (${group.length}개)`
+    const duplicates =
+      numbers.filter(
+        (item, index) =>
+          numbers.indexOf(item) !== index
       );
 
-      console.log(group);
+    console.log(
+      "중복 번호 목록:"
+    );
 
-      console.log(
-        "------------------------"
-      );
-    }
+    console.log(
+      [...new Set(duplicates)]
+    );
   });
