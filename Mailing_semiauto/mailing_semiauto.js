@@ -12,15 +12,11 @@ fetch("./numbers.json")
 
     let invalidNumbers = [];
 
-    let sequentialDuplicates = [];
-
     let allDuplicates = [];
 
     // ======================
     // 이상 번호 검사
     // ======================
-
-    console.log("\n===== 이상 번호 검사 =====");
 
     numbers.forEach((num, index) => {
 
@@ -36,34 +32,12 @@ fetch("./numbers.json")
           index,
           value: num
         });
-
-        console.log(
-          `⚠️ 이상 번호 발견 (index ${index})`
-        );
-
-        console.log(
-          `값: "${num}"`
-        );
-
-        console.log(
-          `숫자만 포함 여부: ${onlyNumber}`
-        );
-
-        console.log(
-          `길이: ${num.length}`
-        );
-
-        console.log(
-          "------------------------"
-        );
       }
     });
 
     // ======================
     // 전체 중복 검사
     // ======================
-
-    console.log("\n===== 전체 중복 검사 =====");
 
     const duplicateMap = {};
 
@@ -87,23 +61,11 @@ fetch("./numbers.json")
             number: num,
             indexes
           });
-
-          console.log(
-            `⚠️ 중복 번호: ${num}`
-          );
-
-          console.log(
-            `등장 위치: ${indexes.join(", ")}`
-          );
-
-          console.log(
-            "------------------------"
-          );
         }
       });
 
     // ======================
-    // 버튼 생성 + 그룹 검사
+    // 버튼 생성
     // ======================
 
     const ktContainer =
@@ -130,52 +92,9 @@ fetch("./numbers.json")
 
       group.forEach((num, idx) => {
 
-        const prev =
-          idx > 0
-            ? group[idx - 1]
-            : null;
-
-        const next =
-          idx < group.length - 1
-            ? group[idx + 1]
-            : null;
-
-        const prevDuplicate =
-          prev === num;
-
-        const nextDuplicate =
-          next === num;
-
         console.log(
           `${idx + 1}. ${num}`
         );
-
-        if (
-          prevDuplicate ||
-          nextDuplicate
-        ) {
-
-          sequentialDuplicates.push({
-            group: groupNumber,
-            number: num
-          });
-
-          console.log(
-            "⚠️ 연속 중복 감지"
-          );
-
-          console.log(
-            `이전: ${prev}`
-          );
-
-          console.log(
-            `현재: ${num}`
-          );
-
-          console.log(
-            `다음: ${next}`
-          );
-        }
       });
 
       // ======================
@@ -243,9 +162,62 @@ fetch("./numbers.json")
       `전체 중복 번호 수: ${allDuplicates.length}`
     );
 
-    console.log(
-      `연속 중복 감지 수: ${sequentialDuplicates.length}`
-    );
-
     console.log("========================");
+
+    // ======================
+    // 이상 번호 상세
+    // ======================
+
+    console.log("\n===== 이상 번호 상세 =====");
+
+    if (invalidNumbers.length === 0) {
+
+      console.log("없음");
+
+    } else {
+
+      invalidNumbers.forEach(item => {
+
+        console.log(
+          `위치: ${item.index}`
+        );
+
+        console.log(
+          `값: ${item.value}`
+        );
+
+        console.log(
+          "------------------------"
+        );
+      });
+    }
+
+    // ======================
+    // 전체 중복 번호 상세
+    // ======================
+
+    console.log("\n===== 전체 중복 번호 상세 =====");
+
+    if (allDuplicates.length === 0) {
+
+      console.log("없음");
+
+    } else {
+
+      allDuplicates.forEach(item => {
+
+        console.log(
+          `번호: ${item.number}`
+        );
+
+        console.log(
+          `위치: ${item.indexes.join(", ")}`
+        );
+
+        console.log(
+          "------------------------"
+        );
+      });
+    }
+
   });
