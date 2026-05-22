@@ -1,4 +1,5 @@
 const CHUNK_SIZE = 19;
+const UNION_LIMIT = 1200;
 
 // ======================
 // 번호 검사 함수
@@ -285,5 +286,31 @@ fetch("./multicultural_numbers.json")
       "kt-multi-buttons",
       "lg-multi-buttons",
       "다문화"
+    );
+  });
+
+
+// ======================
+// 노동조합 번호 불러오기
+// ======================
+
+fetch("./union_numbers.json")
+  .then(response => response.json())
+  .then(numbers => {
+
+    // 1200개만 사용
+    const limitedNumbers =
+      numbers.slice(0, UNION_LIMIT);
+
+    validateNumbers(
+      limitedNumbers,
+      "노동조합 번호"
+    );
+
+    createButtons(
+      limitedNumbers,
+      "kt-union-buttons",
+      "lg-union-buttons",
+      "노동조합"
     );
   });
