@@ -269,23 +269,23 @@ fetch("./numbers.json")
   });
 
 // ======================
-// 다문화 번호 불러오기
+// 택시 번호 불러오기
 // ======================
 
-fetch("./multicultural_numbers.json")
+fetch("./taxi_numbers.json")
   .then(response => response.json())
   .then(numbers => {
 
     validateNumbers(
       numbers,
-      "다문화 번호"
+      "택시 번호"
     );
 
     createButtons(
       numbers,
-      "kt-multi-buttons",
-      "lg-multi-buttons",
-      "다문화"
+      "kt-taxi-buttons",
+      "lg-taxi-buttons",
+      "택시"
     );
   });
 
