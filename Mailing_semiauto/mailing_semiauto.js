@@ -1,5 +1,5 @@
 const CHUNK_SIZE = 19;
-const UNION_LIMIT = 1200;
+const UNION_LIMIT = 1900;
 
 // ======================
 // 번호 검사 함수
@@ -246,48 +246,6 @@ function createButtons(
     );
   }
 }
-
-// ======================
-// 일반 번호 불러오기
-// ======================
-
-fetch("./numbers.json")
-  .then(response => response.json())
-  .then(numbers => {
-
-    validateNumbers(
-      numbers,
-      "일반 번호"
-    );
-
-    createButtons(
-      numbers,
-      "kt-buttons",
-      "lg-buttons",
-      "문자"
-    );
-  });
-
-// ======================
-// 택시 번호 불러오기
-// ======================
-
-fetch("./taxi_numbers.json")
-  .then(response => response.json())
-  .then(numbers => {
-
-    validateNumbers(
-      numbers,
-      "택시 번호"
-    );
-
-    createButtons(
-      numbers,
-      "kt-taxi-buttons",
-      "lg-taxi-buttons",
-      "택시"
-    );
-  });
 
 
 // ======================
