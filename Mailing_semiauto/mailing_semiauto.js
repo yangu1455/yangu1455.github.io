@@ -160,7 +160,7 @@ function validateNumbers(
 function createButtons(
   numbers,
   ktContainerId,
-  lgContainerId,
+  sktContainerId,
   titlePrefix
 ) {
 
@@ -169,9 +169,9 @@ function createButtons(
       ktContainerId
     );
 
-  const lgContainer =
+  const sktContainer =
     document.getElementById(
-      lgContainerId
+      sktContainerId
     );
 
   for (
@@ -222,27 +222,27 @@ function createButtons(
     );
 
     // ======================
-    // LG 버튼
+    // SKT 버튼
     // ======================
 
-    const lgRecipients =
+    const sktRecipients =
       group
-        .map(num => `${num}%23`)
+        .map(num => `*281${num}`)
         .join(",");
 
-    const lgButton =
+    const sktButton =
       document.createElement("a");
 
-    lgButton.className = "btn";
+    sktButton.className = "btn";
 
-    lgButton.href =
-      `sms:${lgRecipients}`;
+    sktButton.href =
+      `sms:${sktRecipients}`;
 
-    lgButton.textContent =
-      `LG ${titlePrefix} ${groupNumber}`;
+    sktButton.textContent =
+      `SKT ${titlePrefix} ${groupNumber}`;
 
-    lgContainer.appendChild(
-      lgButton
+    sktContainer.appendChild(
+      sktButton
     );
   }
 }
@@ -256,7 +256,7 @@ fetch("./union_numbers.json")
   .then(response => response.json())
   .then(numbers => {
 
-    // 1200개만 사용
+    // 1900개만 사용
     const limitedNumbers =
       numbers.slice(0, UNION_LIMIT);
 
@@ -268,7 +268,7 @@ fetch("./union_numbers.json")
     createButtons(
       limitedNumbers,
       "kt-union-buttons",
-      "lg-union-buttons",
+      "skt-union-buttons",
       "노동조합"
     );
   });
@@ -289,7 +289,7 @@ fetch("./song_numbers.json")
     createButtons(
       numbers,
       "kt-song-buttons",
-      "lg-song-buttons",
+      "skt-song-buttons",
       "송회장"
     );
   });
