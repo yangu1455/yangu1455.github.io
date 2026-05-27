@@ -1,5 +1,5 @@
 const CHUNK_SIZE = 19;
-const UNION_LIMIT = 1900;
+const UNION_LIMIT = 3800;
 
 // ======================
 // 번호 검사 함수
@@ -286,7 +286,7 @@ fetch("./union_numbers.json")
   .then(response => response.json())
   .then(numbers => {
 
-    // 1900개만 사용
+    // 3800개만 사용
     const limitedNumbers =
       numbers.slice(0, UNION_LIMIT);
 
