@@ -272,24 +272,3 @@ fetch("./union_numbers.json")
       "노동조합"
     );
   });
-
-// ======================
-// 송회장 번호 불러오기
-// ======================
-
-fetch("./song_numbers.json")
-  .then(response => response.json())
-  .then(numbers => {
-
-    validateNumbers(
-      numbers,
-      "송회장 번호"
-    );
-
-    createButtons(
-      numbers,
-      "kt-song-buttons",
-      "skt-song-buttons",
-      "송회장"
-    );
-  });
