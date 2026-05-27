@@ -161,6 +161,7 @@ function createButtons(
   numbers,
   ktContainerId,
   sktContainerId,
+  lgContainerId,
   titlePrefix
 ) {
 
@@ -172,6 +173,11 @@ function createButtons(
   const sktContainer =
     document.getElementById(
       sktContainerId
+    );
+
+  const lgContainer =
+    document.getElementById(
+      lgContainerId
     );
 
   for (
@@ -244,6 +250,30 @@ function createButtons(
     sktContainer.appendChild(
       sktButton
     );
+
+    // ======================
+    // LG 버튼
+    // ======================
+
+    const lgRecipients =
+      group
+        .map(num => `${num}%23`)
+        .join(",");
+
+    const lgButton =
+      document.createElement("a");
+
+    lgButton.className = "btn";
+
+    lgButton.href =
+      `sms:${lgRecipients}`;
+
+    lgButton.textContent =
+      `LG ${titlePrefix} ${groupNumber}`;
+
+    lgContainer.appendChild(
+      lgButton
+    );
   }
 }
 
@@ -269,6 +299,7 @@ fetch("./union_numbers.json")
       limitedNumbers,
       "kt-union-buttons",
       "skt-union-buttons",
+      "lg-union-buttons",
       "노동조합"
     );
   });
