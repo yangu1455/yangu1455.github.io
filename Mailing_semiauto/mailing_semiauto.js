@@ -1,5 +1,5 @@
 const CHUNK_SIZE = 19;
-const UNION_LIMIT = 3800;
+// const UNION_LIMIT = 3800;
 
 // ======================
 // 번호 검사 함수
@@ -306,3 +306,7 @@ fetch("./numbers.json")
       "일반"
     );
   });
+
+
+
+  
