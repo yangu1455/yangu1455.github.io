@@ -306,9 +306,26 @@ fetch("./numbers.json")
       "일반"
     );
 
+    // ======================
+    // 디버그 정보
+    // ======================
+
+    const usedCount =
+      START_INDEX +
+      limitedNumbers.length;
+
+    const remainCount =
+      numbers.length -
+      usedCount;
+
     document.getElementById(
       "debug-info"
     ).innerHTML = `
+
+      <p>
+        전체 번호 수:
+        ${numbers.length}개
+      </p>
 
       <p>
         현재 범위:
@@ -318,13 +335,18 @@ fetch("./numbers.json")
       </p>
 
       <p>
-        현재 번호 수:
+        현재 페이지 번호 수:
         ${limitedNumbers.length}개
       </p>
 
       <p>
+        지금까지 사용한 번호:
+        ${usedCount}개
+      </p>
+
+      <p>
         남은 번호:
-        ${numbers.length - END_INDEX}개
+        ${remainCount}개
       </p>
 
     `;
