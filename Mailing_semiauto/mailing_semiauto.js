@@ -305,6 +305,29 @@ fetch("./numbers.json")
       "lg-union-buttons",
       "일반"
     );
+
+    document.getElementById(
+      "debug-info"
+    ).innerHTML = `
+
+      <p>
+        현재 범위:
+        ${START_INDEX}
+        ~
+        ${END_INDEX - 1}
+      </p>
+
+      <p>
+        현재 번호 수:
+        ${limitedNumbers.length}개
+      </p>
+
+      <p>
+        남은 번호:
+        ${numbers.length - END_INDEX}개
+      </p>
+
+    `;
   });
 
 
