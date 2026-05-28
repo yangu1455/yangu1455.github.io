@@ -279,20 +279,23 @@ function createButtons(
 
 
 // ======================
-// 노동조합 번호 불러오기
+// 휴대폰번호 불러오기
 // ======================
 
-fetch("./union_numbers.json")
+fetch("./numbers.json")
   .then(response => response.json())
   .then(numbers => {
 
     // 3800개만 사용
     const limitedNumbers =
-      numbers.slice(0, UNION_LIMIT);
+      numbers.slice(
+        START_INDEX,
+        END_INDEX
+      );
 
     validateNumbers(
       limitedNumbers,
-      "노동조합 번호"
+      "일반번호"
     );
 
     createButtons(
@@ -300,6 +303,6 @@ fetch("./union_numbers.json")
       "kt-union-buttons",
       "skt-union-buttons",
       "lg-union-buttons",
-      "노동조합"
+      "일반"
     );
   });
