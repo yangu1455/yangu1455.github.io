@@ -328,13 +328,6 @@ fetch(JSON_FILE)
       </p>
 
       <p>
-        현재 범위:
-        ${START_INDEX}
-        ~
-        ${END_INDEX - 1}
-      </p>
-
-      <p>
         현재 페이지 번호 수:
         ${limitedNumbers.length}개
       </p>
