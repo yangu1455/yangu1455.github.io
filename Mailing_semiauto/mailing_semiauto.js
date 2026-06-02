@@ -282,7 +282,7 @@ function createButtons(
 // 휴대폰번호 불러오기
 // ======================
 
-fetch("./numbers.json")
+fetch(JSON_FILE)
   .then(response => response.json())
   .then(numbers => {
 
